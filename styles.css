@@ -1,0 +1,123 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent overflow */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ecf0f1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    flex-wrap: wrap; /* Ensure controls wrap on smaller screens */
+}
+
+label {
+    font-size: 1.1rem;
+    margin-right: 10px;
+}
+
+select, input[type="range"], button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 0 10px;
+}
+
+select, input[type="range"] {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+button {
+    background-color: #e74c3c;
+    color: #ecf0f1;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.array-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between; /* Ensure spacing between bars */
+    height: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ecf0f1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-y: auto; /* Allow vertical scrolling if needed */
+}
+
+.bar {
+    background-color: #3498db;
+    border-radius: 5px;
+    transition: height 0.2s ease;
+    margin: 0 1px; /* Add margin for spacing */
+}
+
+/* Adjust bar width dynamically based on array size */
+.bar {
+    width: calc((100% / var(--array-size)) - 4px); /* Adjust width calculation */
+}
+
+.bar:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    select, input[type="range"], button {
+        width: 100%;
+        margin: 0;
+    }
+
+    button {
+        margin-top: 10px;
+    }
+}
